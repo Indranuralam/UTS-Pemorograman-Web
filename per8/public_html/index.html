@@ -1,0 +1,39 @@
+<html>
+        <head>
+            <title>Slide Show</title>
+        <script language="javascript">
+        var image1 = new Image();
+        image1.src="IMG_20160224_164314.jpg";
+        var image2 = new Image();
+        image2.src="IMG_20160304_083620.jpg";
+        var image3 = new Image();
+        image3.src="IMG_20160414_211533.jpg";
+        var image4 = new Image();
+        image4.src="IMG_20160415_131006.jpg";
+        var image5 = new Image();
+        image5.src="IMG_20160410_143736.jpg";
+       
+        </script>    
+    </head>
+    <body style="background-color:darkgray;">
+    <center>
+        <h2> Penggunaan Objek Image untuk Slide Show</h2>
+        <img src="IMG_20160410_143736.jpg" name="slide" width="500" height="250">
+    </center>
+    <script>
+        var step=1;
+        function slideit()
+        {
+            if(!document.images)
+                return
+            document.images.slide.src=eval("image"+step+".src");
+            if(step<5)
+                step++;
+            else
+                step=1;
+            setTimeout("slideit()",2000);
+        }
+        slideit();
+    </script>
+    </body>
+</html>
